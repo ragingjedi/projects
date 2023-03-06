@@ -1,0 +1,42 @@
+function CalculateOverlapArea()
+% Calculates the area of two circles in a plane that can overlap
+%
+% INPUT
+% R1 = radius for circle 1
+% R2 = radius for circle 2
+% d = distance of seperation between the two circles
+% p error = The tolerance of the accuracy as percent error
+%
+% PROCEDURE
+% Use Monte Carlo integration
+%
+% OUTPUT
+% Show a figure of overlapping circles according to input parameters
+% Show a graph of area versus distance of seperation
+
+R1 = input('Enter the radius of Circle 1: ');
+    if(R1 < 0.01)
+    error('1 = natural length scale: R1 should not be less than 0.01');
+    end
+    if(R1 > 10.0)
+    error('1 = natural length scale: R1 should not be greater than 10.0');
+    end
+R2 = input('Enter the radius of Circle 2: ');
+    if(R2 < 0.01)
+    error('1 = natural length scale: R2 should not be less than 0.01');
+    end
+    if(R2 > 10.0)
+    error('1 = natural length scale: R2 should not be greater than 10.0');
+    end
+d  = input('Enter seperation distances: ');
+    if(d < 0.0)
+    error('The seperation distance must be greater than 0');
+    end
+L = 2max(R1,R2);
+    if(d < L)
+    error('The seperation distance should not be greater than ',num2str(L));
+    end
+
+
+    
+end 
